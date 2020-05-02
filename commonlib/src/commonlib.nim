@@ -7,4 +7,4 @@ proc add*(x, y: int): int =
   return x + y
 
 proc message1*(caller: string): string =
-  result = "Hi ", caller, ". commonlib says hello"
+  result = "Hi " & caller & ". commonlib says hello"
