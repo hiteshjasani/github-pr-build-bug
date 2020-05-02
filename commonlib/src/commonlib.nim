@@ -6,5 +6,5 @@ proc add*(x, y: int): int =
   ## Adds two files together.
   return x + y
 
-proc message1*(): string =
-  result = "Hello world from commonlib"
+proc message1*(caller: string): string =
+  result = "Hi " & caller & ". commonlib says hello"
