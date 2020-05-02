@@ -25,5 +25,5 @@ jobs:
     - name: Test build
       run: >
         docker run -v `pwd`:/usr/src/app -w /usr/src/app/app2
-        nimlang/nim:${{ NIM_VER }}-${{ OS_VER }}
+        nimlang/nim:$NIM_VER-$OS_VER
         nimble build -y
