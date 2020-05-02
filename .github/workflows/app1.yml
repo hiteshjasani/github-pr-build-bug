@@ -1,0 +1,29 @@
+name: CI-app1
+
+on:
+  push:
+    paths:
+    - 'commonlib/src/**'
+    - 'commonlib/tests/**'
+    - 'commonlib/**/*.nimble'
+    - 'app1/src/**'
+    - 'app1/tests/**'
+    - 'app1/**/*.nimble'
+    - '.github/workflows/app1.yml'
+
+jobs:
+  build:
+    env:
+      NIM_VER: 1.2.0
+      OS_VER: ubuntu
+
+    runs-on: ubuntu-18.04
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Test build
+      run: >
+        docker run -v `pwd`:/usr/src/app -w /usr/src/app/app2
+        nimlang/nim:${{ NIM_VER }}-${{ OS_VER }}
+        nimble build -y
