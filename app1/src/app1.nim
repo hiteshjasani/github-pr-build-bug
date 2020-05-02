@@ -2,4 +2,4 @@ from commonlib as cl import nil
 
 when isMainModule:
   echo("Hello, World!")
-  echo cl.message1()
+  echo cl.message1("app1")
